@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Directcollections : Providing off-heap implementations of some Java collections using DirectMemory." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Directcollections</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/moondowner/directcollections">View on GitHub</a>
+
+          <h1 id="project_title">Directcollections</h1>
+          <h2 id="project_tagline">Providing off-heap implementations of some Java collections using DirectMemory.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/moondowner/directcollections/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/moondowner/directcollections/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <pre><code>    |o               |              |    |              |    o               
+,---|.,---.,---.,---.|--- ,---.,---.|    |    ,---.,---.|--- .,---.,---.,---.
+|   |||    |---'|    |    |    |   ||    |    |---'|    |    ||   ||   |`---.
+`---'``    `---'`---'`---'`---'`---'`---'`---'`---'`---'`---'``---'`   '`---'
+</code></pre>
+
+<h2>Intro</h2>
+
+<p>Providing off-heap implementations of some Java collections using DirectMemory.</p>
+
+<p>At the moment, java.util.List is implemented, others soon to follow.</p>
+
+<h2>Usage</h2>
+
+<p>To use directcollections, you'll need to define a DirectMemory CacheService first.</p>
+
+<pre><code>CacheService&lt;String, Object&gt; cacheService = new DirectMemory&lt;String, Object&gt;()
+        .setInitialCapacity(100).setNumberOfBuffers(10).setSize(10000).newCacheService();
+</code></pre>
+
+<p>And then, the List is created in the following line:</p>
+
+<pre><code>List offHeapList = new DirectMemoryList(cacheService);
+</code></pre>
+
+<p>And your Maven dependencies will look like this:</p>
+
+<pre><code>    &lt;dependency&gt;
+        &lt;groupId&gt;com.thisismartin.directcollections&lt;/groupId&gt;
+        &lt;artifactId&gt;directcollections&lt;/artifactId&gt;
+        &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.apache.directmemory&lt;/groupId&gt;
+        &lt;artifactId&gt;directmemory-cache&lt;/artifactId&gt;
+        &lt;version&gt;0.2-SNAPSHOT&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre>
+
+<h2>Next</h2>
+
+<ul>
+<li>Improvements in the List implementation (see comments in source code).</li>
+<li>Implementing the java.util.Queue interface.</li>
+<li>Making it available on the OSS Nexus repository.</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Directcollections maintained by <a href="https://github.com/moondowner">moondowner</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
