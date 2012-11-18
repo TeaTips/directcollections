@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.thisismartin.directcollections</groupId>
+		<artifactId>directcollections-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>directcollections</artifactId>
+	<name>DirectCollections</name>
+
+	<licenses>
+		<license>
+			<name>BSD 3-Clause</name>
+			<url>http://www.opensource.org/licenses/BSD-3-Clause</url>
+		</license>
+	</licenses>
+	<inceptionYear>2012</inceptionYear>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.directmemory</groupId>
+			<artifactId>directmemory-cache</artifactId>
+			<version>0.2-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+</project>
