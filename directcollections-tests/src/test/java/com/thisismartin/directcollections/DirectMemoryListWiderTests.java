@@ -7,14 +7,12 @@ import java.util.UUID;
 
 import org.apache.directmemory.DirectMemory;
 import org.apache.directmemory.cache.CacheService;
-import org.apache.directmemory.serialization.kryo.KryoSerializer;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.thisismartin.directcollections.DirectMemoryList;
 import com.thisismartin.directcollections.helpers.TestPOJO;
 
 /**
@@ -24,11 +22,8 @@ import com.thisismartin.directcollections.helpers.TestPOJO;
  * 
  */
 public class DirectMemoryListWiderTests {
-	KryoSerializer ser = new KryoSerializer();
 
-	CacheService<String, Object> cacheService = new DirectMemory<String, Object>()
-			.setInitialCapacity(100).setNumberOfBuffers(10).setSize(10000000)
-			.setSerializer(ser).newCacheService();
+	CacheService<String, Object> cacheService;
 	Logger logger = LoggerFactory
 			.getLogger(DirectMemoryListFunctionalityTests.class);
 

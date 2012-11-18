@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.apache.directmemory.DirectMemory;
 import org.apache.directmemory.cache.CacheService;
-import org.apache.directmemory.serialization.kryo.KryoSerializer;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,9 +22,7 @@ import org.slf4j.LoggerFactory;
  */
 public class DirectMemoryListFunctionalityTests {
 
-	CacheService<String, Object> cacheService = new DirectMemory<String, Object>()
-			.setInitialCapacity(100).setNumberOfBuffers(10).setSize(10000000)
-			.setSerializer(new KryoSerializer()).newCacheService();
+	CacheService<String, Object> cacheService;
 	Logger logger = LoggerFactory
 			.getLogger(DirectMemoryListFunctionalityTests.class);
 
