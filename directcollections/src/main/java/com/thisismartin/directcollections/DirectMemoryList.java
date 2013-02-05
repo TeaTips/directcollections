@@ -28,7 +28,7 @@ public class DirectMemoryList implements List<Object> {
 
 	public DirectMemoryList() {
 		id = UUID.randomUUID().toString();
-		size = new BigInteger("0");
+		size = BigInteger.ZERO;
 	}
 
 	public DirectMemoryList(CacheService<String, Object> cacheService) {
@@ -105,7 +105,7 @@ public class DirectMemoryList implements List<Object> {
 
 	public boolean add(Object e) {
 		if (cacheService.put(id.concat(":").concat(size.toString()), e) != null) {
-			size = size.add(new BigInteger("1"));
+			size = size.add(BigInteger.ONE);
 			return true;
 		}
 
@@ -116,7 +116,7 @@ public class DirectMemoryList implements List<Object> {
 		for (int i = 0; i < size.intValue(); i++) {
 			if (this.get(i).equals(o)) {
 				cacheService.free(id.concat(":").concat(String.valueOf(i)));
-				size = size.subtract(new BigInteger("1"));
+				size = size.subtract(BigInteger.ONE);
 				return true;
 			}
 		}
@@ -179,7 +179,7 @@ public class DirectMemoryList implements List<Object> {
 		for (int i = 0; i < size.intValue(); i++) {
 			cacheService.free(id.concat(":").concat(Integer.toString(i)));
 		}
-		size = new BigInteger("0");
+		size = BigInteger.ZERO;
 	}
 
 	public Object get(int index) {
