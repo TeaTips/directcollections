@@ -1,10 +1,11 @@
-
                                                                              
         |o               |              |    |              |    o               
     ,---|.,---.,---.,---.|--- ,---.,---.|    |    ,---.,---.|--- .,---.,---.,---.
     |   |||    |---'|    |    |    |   ||    |    |---'|    |    ||   ||   |`---.
     `---'``    `---'`---'`---'`---'`---'`---'`---'`---'`---'`---'``---'`   '`---'
                                                                                  
+
+[![Build Status](https://travis-ci.org/moondowner/directcollections.png)](https://travis-ci.org/moondowner/directcollections)
 
 ##Intro
 
